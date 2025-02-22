@@ -21,7 +21,7 @@ pipeline {
                 script{
                     sh '''
                     echo 'Build Docker Image'
-                    docker build -t abhishekf5/cicd-e2e:${BUILD_NUMBER} .
+                    DOCKER_BUILDKIT=1 docker build -t abhishekf5/cicd-e2e:${BUILD_NUMBER} .
                     '''
                 }
             }
