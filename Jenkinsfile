@@ -21,7 +21,7 @@ pipeline {
                 script{
                     sh '''
                     echo 'Build Docker Image'
-                    docker build -t your_dockerhub_username/python-cicd:${BUILD_NUMBER} .
+                    docker build -t abhishekf5/cicd-e2e:${BUILD_NUMBER} .
                     '''
                 }
             }
@@ -32,7 +32,7 @@ pipeline {
                 script{
                     sh '''
                     echo 'Push Docker Image to DockerHub'
-                    docker push your_dockerhub_username/python-cicd:${BUILD_NUMBER}
+                    docker push -t abhishekf5/cicd-e2e:${BUILD_NUMBER} .
                     '''
                 }
             }
